@@ -29,7 +29,7 @@ FilesToParse::FilesToParse(){
 bool FilesToParse::add_to_vector(string file_name){
     if(check_if_exists(file_name)){
         this->file_vector.push_back(file_name);
-        //cout << "Adding to FileToParse Vector: " << file_name << endl;
+        cout << "Adding to FileToParse Vector: " << file_name << endl;
         return true;
     }
     return false;
@@ -37,7 +37,7 @@ bool FilesToParse::add_to_vector(string file_name){
 
 void FilesToParse::print_file_name_vector(void){
     for(vector<string>::iterator i = this->file_vector.begin(); i != this->file_vector.end(); i++){
-        //cout << *i << endl;
+        cout << *i << endl;
     }
 }
 

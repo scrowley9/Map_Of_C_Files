@@ -67,7 +67,6 @@ vector<ReadFile*> read_files(FilesToParse vec){
     return ret_vector;
 }
 
-
 string extract_file_name_from_include(string header){
 
     const regex system_pattern = regex("(<{1}[A-Za-z_*/]+.?[h]?>{1})");

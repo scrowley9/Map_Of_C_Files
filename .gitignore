@@ -1,5 +1,6 @@
 .DS_Store
-.vscode/*
+t1.c
 test1.c
 try.c
-a.out
+.vscode/*
+.vscode/

@@ -10,4 +10,4 @@ valgrind: default
 	valgrind --quiet --leak-check=full --error-exitcode=1 --show-leak-kinds=all --errors-for-leak-kinds=all --undef-value-errors=no ./a.out
 
 clean:
-	rm -rf a.out
+	rm -rf connection_matrix
