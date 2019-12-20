@@ -1,4 +1,7 @@
 #include "ReadFile.hpp"
+#include <string>
+
+template class std::basic_string<char>;
 
                             /* Public Methods */
 
@@ -26,7 +29,7 @@ bool ReadFile::fill_include_vectors(void){
         return false;
     }
 
-    cout << "Reading: " << this->file_name << endl;
+    //cout << "Reading: " << this->file_name << endl;
 
     // Matched Strings Go Here
     smatch matches;
@@ -66,5 +69,5 @@ string ReadFile::get_file_name(void){
 
                               /* Protected */
 // Regex Include Patterns
-const regex ReadFile::system_pattern = regex("(# *include *<{1}[A-Za-z_*]+.?[h]?>{1})");
-const regex ReadFile::user_pattern = regex("(# *include *\"{1}[A-Za-z_*]+.?[h]?\"{1})");
+const regex ReadFile::system_pattern = regex("(# *include *<{1}[A-Za-z_*/]+.?[h]?>{1})");
+const regex ReadFile::user_pattern = regex("(# *include *\"{1}[A-Za-z_*/]+.?[h]?\"{1})");

@@ -1,9 +1,9 @@
 
-default:
-	g++ main.cpp ReadFile.cpp FilesToParse.cpp
+connection_matrix:
+	g++ main.cpp ReadFile.cpp FilesToParse.cpp Connections.cpp -o $@
 
 gdb:
-	g++ main.cpp ReadFile.cpp FilesToParse.cpp -g
+	g++ main.cpp ReadFile.cpp FilesToParse.cpp Connections.cpp -g
 	gdb ./a.out
 
 valgrind: default
