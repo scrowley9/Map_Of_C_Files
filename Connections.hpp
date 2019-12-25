@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include "ReadFile.hpp"
+#include <regex>
 using namespace std;
 
 /*
@@ -20,7 +20,7 @@ public:
     // Note these both search starting at 0 (includes 'first' vertex)
     int find_row_index(string vertex);           // DONE
     int find_col_index(int row, string vertex);  // DONE
-    void connect_edge(string v1, string v2);          // DONE
+    void connect_edge(string v1, string v2);     // DONE
     void print_matrix(void);                // DONE
     bool push_back_iff_vertex_dne_in_vector(vector<string>& vector, string vertex);   // DONE
     string get_vertex(int row);

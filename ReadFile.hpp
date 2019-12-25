@@ -10,24 +10,28 @@ using namespace std;
 
 class ReadFile{
 public:
-    ReadFile(string file_name); // Constructor
+    ReadFile(string file_name); // Constructor  -- Opens File, get headers, Closes File
     ~ReadFile();                // Deconstructor
-    bool fill_include_vectors(void);
-    void print_includes(void);
-    vector<string> get_system_vector(void);
-    vector<string> get_user_vector(void);
-    string get_file_name(void);
+    void print_c_file_includes(void);
+    string get_c_file_name(void);
+    int ERRNO;
+    vector<string> h_file_vector;
 
 protected:
+    bool check_if_exists(string file_name); // Not Currently Needed
+    bool add_to_vector(string file_name);
+    void print_files_that_include_this_h_file(vector<string> vec);
+    bool fill_h_file_vector(void);
+
     /* Include Header Pattern */
     static const regex system_pattern;
     static const regex user_pattern;
+    static const regex header_file_name_pattern;
 
 private:
-    vector<string> system_includes;
-    vector<string> user_includes;
+    string extract_file_name_from_include(string header);
     fstream* file;
-    string file_name;
+    string c_file_name;
 };
 
 #endif // READFILE_HPP

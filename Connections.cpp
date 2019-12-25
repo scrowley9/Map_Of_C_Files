@@ -2,23 +2,21 @@
 #include <string>
 using namespace std;
 
-template class std::basic_string<char>;
-
 Connections::Connections(){
+    this->matrix = vector< vector<string> >(); // Init Matrix
 }
 
 // Constructor -- DONE
-Connections::Connections(string node){
+Connections::Connections(string str){
     vector<vector<string> > matrix(1, vector<string>(1)); // Init Matrix
-    matrix[0][0] = node;
+    matrix[0][0] = str;
     this->matrix = matrix;
 }
 
 /* Add New Vertex To Graph -- DONE */
-
 bool Connections::add_new_vertex_to_matrix(string vertex){
     for(int i = 0; i < this->matrix.size(); i++){
-        if(this->matrix[i][0] == vertex){
+        if(!this->matrix[i][0].compare(vertex)){
             return false;
         }
     }
@@ -28,7 +26,6 @@ bool Connections::add_new_vertex_to_matrix(string vertex){
 }
 
 // Seems alright thus far
-
 void Connections::connect_edge(string v1, string v2){
     if(v1 == v2) return;
     int v1_r = find_row_index(v1);
@@ -85,7 +82,7 @@ void Connections::connect_edge(string v1, string v2){
 
 bool Connections::push_back_iff_vertex_dne_in_vector(vector<string>& vector, string vertex){
     for(int i = 0; i < vector.size(); i++){
-        if(vector[i] == vertex){
+        if(!vector[i].compare(vertex)){
             return false;
         }
     }

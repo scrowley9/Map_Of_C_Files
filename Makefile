@@ -1,13 +1,14 @@
+CPP_FILES=main.cpp ReadFile.cpp Connections.cpp
 
 connection_matrix:
-	g++ main.cpp ReadFile.cpp FilesToParse.cpp Connections.cpp -o $@
+	g++ $(CPP_FILES) -o $@
 
 gdb:
-	g++ main.cpp ReadFile.cpp FilesToParse.cpp Connections.cpp -g
+	g++ $(CPP_FILES) -g
 	gdb ./a.out
 
-valgrind: default
-	valgrind --quiet --leak-check=full --error-exitcode=1 --show-leak-kinds=all --errors-for-leak-kinds=all --undef-value-errors=no ./a.out
+valgrind: connection_matrix
+	valgrind --quiet --leak-check=full --error-exitcode=1 --show-leak-kinds=all --errors-for-leak-kinds=all --undef-value-errors=no ./connection_matrix
 
 clean:
-	rm -rf connection_matrix
+	rm -rf connection_matrix a.out a.out.dSYM/
