@@ -95,12 +95,12 @@ bool ReadFile::fill_h_file_vector(void){
             
             /* Get .h file name */
             string header_file_name = this->extract_file_name_from_include(matches[0]);
-            if(header_file_name.empty()) cout << "Header empty..." << endl;
-
-            //cout << header_file_name << endl;
-
-            /* Add .h file to vector */
-            this->add_to_vector(header_file_name);
+            if(header_file_name.empty()){
+                cout << this->c_file_name << " - header empty..." << endl;
+            } else{
+                /* Add .h file to vector */
+                this->add_to_vector(header_file_name);
+            }
         }
     }
     return true;
