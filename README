@@ -1,7 +1,7 @@
 Designed to output the header file links for a given C program.
 
 Steps to compile project:
-Clone repo, Open Map Of C Files folder in a terminal, Type 'make' (Install GNU Make if needed)
+Clone repo, Open Map Of C Files folder in a terminal, Type 'make' (Install GNU Make if needed).
 
 
 ***** Example Use Of Program *****
