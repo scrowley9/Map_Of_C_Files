@@ -96,7 +96,12 @@ bool Connections::push_back_iff_vertex_dne_in_vector(vector<string>& vector, str
 void Connections::print_matrix(void){
     for(int i = 0; i < this->matrix.size(); i++){
         for(int j = 0; j < this->matrix[i].size(); j++){
-            cout << "(" << i << "," << j << ") File: " << this->matrix[i][j].data();
+            if(j == 0){
+                cout << "(" << i << "," << j << ") H File: " << this->matrix[i][j].data();
+            }else{
+                cout << "(" << i << "," << j << ") C File: " << this->matrix[i][j].data();
+            }
+            
             if(j+1 < this->matrix[i].size()){
                 cout << ", ";
             }

@@ -161,7 +161,7 @@ int main(int argc, const char * argv[]){
             }
         }
     }
-
+    cout << "[H File: Column 1], [C File 1], [C File 2], ..., [C File n]" << endl;
     graph.print_matrix();
 
     // FilesToParse file_check_vector = create_vector_of_strings(argc-1, argv+1);

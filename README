@@ -1,0 +1,21 @@
+Designed to output the header file links for a given C program.
+
+Steps to compile project:
+Clone repo, Open Map Of C Files folder in a terminal, Type 'make' (Install GNU Make if needed)
+
+
+***** Example Use Of Program *****
+
+Example Input:
+./connection_matrix ./connection_matrix file1.c file2.c
+
+Example Output:
+[H File: Column 1], [C File 1], [C File 2], ..., [C File n]
+(0,0) H File: header1.h, (0,1) C File: file1.c, (0,2) C File: file2.c
+(1,0) H File: header4.h, (1,1) C File: file1.c
+(2,0) H File: header5.h, (2,1) C File: file1.c
+(3,0) H File: header2.h, (3,1) C File: file2.c
+(4,0) H File: header3.h, (4,1) C File: file2.c
+
+
+NOTE: The first column displayed are the header files. The remaining files are C files including that header.
