@@ -97,14 +97,16 @@ void Connections::print_matrix(void){
     for(int i = 0; i < this->matrix.size(); i++){
         for(int j = 0; j < this->matrix[i].size(); j++){
             if(j == 0){
-                cout << "(" << i << "," << j << ") H File: " << this->matrix[i][j].data();
+                fprintf(stdout, "(%d,%d) Included File: %-s ---", i, j, this->matrix[i][j].data());
+                // cout << "(" << i << "," << j << ") H File: " << this->matrix[i][j].data();
             }else{
-                cout << "(" << i << "," << j << ") C File: " << this->matrix[i][j].data();
+                fprintf(stdout, "[%-s]", this->matrix[i][j].data());
+                // cout << "(" << i << "," << j << ") C File: " << this->matrix[i][j].data();
             }
             
-            if(j+1 < this->matrix[i].size()){
-                cout << ", ";
-            }
+            // if(j+1 < this->matrix[i].size()){
+            //     cout << ", ";
+            // }
         }
         cout << endl;
     }

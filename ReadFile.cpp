@@ -126,6 +126,6 @@ void ReadFile::print_files_that_include_this_h_file(vector<string> vec){
 }
 
 // Regex Include Patterns
-const regex ReadFile::system_pattern = regex("(# *include *<{1}[0-9A-Za-z_*/]+.?[h]?>{1})");
-const regex ReadFile::user_pattern = regex("(# *include *\"{1}[0-9A-Za-z_*/]+.?[h]?\"{1})");
+const regex ReadFile::system_pattern = regex("(# *include *<{1}[0-9A-Za-z_.*/]+.?[h]?>{1})");
+const regex ReadFile::user_pattern = regex("(# *include *\"{1}[0-9A-Za-z_.*/]+.?[h]?\"{1})");
 const regex ReadFile::header_file_name_pattern = regex("([0-9A-Za-z_*/]+.h)"); // PATTERN MUST HAVE '.h' in it!
